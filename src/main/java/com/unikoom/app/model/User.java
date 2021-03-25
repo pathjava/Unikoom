@@ -27,19 +27,23 @@ public class User {
     private Long id;
 
     @NotBlank
+    @NotNull
     private String login;
 
     @NotBlank
+    @NotNull
     @Column(name = "full_name")
     private String fullName;
 
     @Email
     @NotBlank
+    @NotNull
     private String email;
 
     @NotNull
     private Date birthday;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
