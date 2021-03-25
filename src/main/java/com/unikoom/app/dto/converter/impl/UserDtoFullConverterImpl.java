@@ -25,17 +25,17 @@ public class UserDtoFullConverterImpl implements Converter<User, UserDtoFull> {
         else if (dto.getId() == null) {
             return new User(
                     null,
-                    dto.getLogin(),
-                    dto.getFullName(),
-                    dto.getEmail(),
+                    dto.getLogin().trim(),
+                    dto.getFullName().trim(),
+                    dto.getEmail().trim(),
                     dto.getBirthday(),
                     dto.getSex()
             );
         } else {
             User user = userGetService.get(dto.getId());
-            user.setLogin(dto.getLogin());
-            user.setFullName(dto.getFullName());
-            user.setEmail(dto.getEmail());
+            user.setLogin(dto.getLogin().trim());
+            user.setFullName(dto.getFullName().trim());
+            user.setEmail(dto.getEmail().trim());
             user.setBirthday(dto.getBirthday());
             user.setSex(dto.getSex());
             return user;
